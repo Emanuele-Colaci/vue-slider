@@ -108,3 +108,11 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     left: 50%;
     transform: translate(-50%) rotate(135deg);
 }
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 20px;
+    text-align: right;
+}
