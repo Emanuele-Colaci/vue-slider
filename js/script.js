@@ -35,8 +35,12 @@ createApp({
                     selected: false
                 }
             ],
-            movimento: 0
+            movimento: 0,
+            autoScroll: null
         }
+    },
+    created() {
+        this.startAutoScroll();
     },
     methods: {
         selectSlide(index){
@@ -46,17 +50,25 @@ createApp({
         this.movimento = index;
         
         },
-        prevSlide() {
+        prevSlide(){
             this.movimento--;
             if(this.movimento < 0){
                 this.movimento = this.slides.length - 1;
             }
         },
-        nextSlide() {
+        nextSlide(){
             this.movimento++;
             if(this.movimento > this.slides.length - 1){
                 this.movimento = 0;
             }
+        },
+        startAutoScroll(){
+            this.autoScroll = setInterval(() => {
+                this.nextSlide();
+            }, 3000);
+        },
+        stopAutoScroll(){
+            clearInterval(this.autoScroll);
         }
-    },
+    }
 }).mount('#app')
