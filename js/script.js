@@ -39,7 +39,7 @@ createApp({
             autoScroll: null
         }
     },
-    created() {
+    created(){
         this.startAutoScroll();
     },
     methods: {
