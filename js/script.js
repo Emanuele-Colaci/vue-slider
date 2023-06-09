@@ -44,11 +44,7 @@ createApp({
     },
     methods: {
         selectSlide(index){
-        this.slides.forEach((slide, i) => {
-            slide.selected = i === index;
-        });
         this.movimento = index;
-        
         },
         prevSlide(){
             this.movimento--;
